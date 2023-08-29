@@ -1,0 +1,182 @@
+/* importar fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* CSS reset - definindo valores iniciais */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+#contact {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 1rem;
+    box-shadow: 0 3px 7px gray;
+}
+
+#contact h1 {
+    font-weight: bolder;
+    color: rgb(8, 8, 86);
+}
+
+#contact h3 {
+    font-style: italic;
+    color: rgb(20, 153, 235);
+}
+
+#photo {
+    width: 128px;
+    border-radius: 70%;
+    border: medium white solid;
+    box-shadow: 3px 3px 5px gray;
+}
+
+#social,
+#contact-social {
+    padding: 0.2rem;
+    text-align: center;
+    display: block;
+}
+
+#social {
+    background-color: aqua;
+    box-shadow: 0 3px 5px gray;
+    position: sticky;
+    top: 0;
+}
+
+#contact-social {
+    display: none;
+}
+
+#social img,
+#contact-social img {
+    width: 24px;
+    margin: 0.3rem;
+}
+
+
+#info {
+    padding: 2rem;
+}
+
+#info ul {
+    list-style-type: square;
+}
+
+#info  {
+    line-height: 2rem;
+}
+
+#info li::marker {
+    color: rgb(20, 153, 235);
+}
+
+#resume,
+#formation,
+#experience,
+#hobbies,
+#technologies {
+    border-bottom: solid gray thin;
+    padding-bottom: 1.5rem;
+}
+
+/* coloca um conteúdo antes do elemento, nesse caso um ícone em formato png */
+.arrow::before {
+    content: url("icons/arrow.png");
+    float: left;
+    /* flutua o ícone à esquerda do conteúdo */
+    margin-right: 0.7rem;
+}
+
+
+
+#info h2 {
+    font-weight: bolder;
+    color: rgb(20, 153, 235);
+    margin: 0.5rem;
+}
+
+@media screen and (min-width: 540px) {
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .content > div {
+        margin: 5px;
+    }
+
+}
+
+@media screen and (min-width: 1021px) {
+    
+    body{
+        background: url("img/background.jpg");
+        background-attachment: fixed;
+    }
+
+    #info{
+        font-size: 1.2rem;
+    }
+    
+    #container {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        margin: 0 auto;
+        background-color: rgb(232, 244, 247);
+        box-shadow: 0 0 5px gray;
+    }
+
+    #contact {
+        box-shadow: none;
+    }
+
+    #basic-info {
+        position: sticky;
+        top: 1rem;
+    }
+
+    #social {
+        display: none;
+    }
+
+    #contact-social {
+        display: block;
+    }
+
+    .content {
+        justify-content: start;
+    }
+
+
+}
+
+@media print {
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .content > div {
+        margin: 5px;
+    }
+
+    #contact-social,
+    #social {
+        display: none;
+    }
+
+    #contact {
+        box-shadow: none;
+        border-bottom: gray dashed thin;
+    }
+}
